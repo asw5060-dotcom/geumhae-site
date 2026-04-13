@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금해 플래닝</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+   body {
+     margin: 0;
+     padding-top: 50px;
+     font-family: Arial, sans-serif;
+     text-align: center;
+     background-color: #ffffff;
+    }
+            
+    section {
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 56px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+    }
+ 
+   .portfolio-container {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     flex-wrap: wrap;
+    }
+  
+    .main {
+      background:
+      linear-gradient(rgba(31, 58, 95, 0.6), rgba(31, 58, 95, 0.6)),
+    url('hero.jpg') center/cover no-repeat;
+      color: white;
+      padding: 120px 20px;
+       height: 85vh;
+       display: flex;
+       align-items: center;
+     }
+  
+    .main .container {
+     margin-top: -40px;
+     }  
+
+
+    .portfolio {
+      background-color: #f5f5f5;
+    }
+
+    .contact {
+      background-color: #ffffff;
+    }
+
+    .button {
+    display: inline-block;
+     background-color: white;
+     color: #1f3a5f;
+     text-decoration: none;
+     padding: 14px 28px;
+     border-radius: 10px;
+     font-size: 16px;
+     font-weight: 600;
+     margin-top: 10px;
+     transition: all 0.25s ease; 
+    }
+  
+    .button:hover {
+     background-color: #eaeaea;
+     transform: translateY(-3px);
+    }
+
+      .menu {
+       position: fixed;
+       top: 0;
+       width: 100%;  
+       background-color: rgba(255, 255, 255, 0.95);
+       padding: 12px 0;
+       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+       z-index: 1000;
+       text-align: center;
+       backdrop-filter: blur(6px);   
+
+      }
+ 
+     .menu a {
+       margin: 0 18px; 
+       text-decoration: none;
+       color: #1f3a5f;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+       position: relative;
+       transition: 0.3s; 
+     }
+
+       .menu a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: #1f3a5f;
+        transition: 0.3s;
+      }
+
+        .menu a:hover {
+         color: #0d2b4d;
+      }
+
+        .menu a:hover::after {
+         width: 100%;
+      }
+
+    
+
+     .contact a {
+     color: #1f3a5f;
+     text-decoration: none;
+     font-weight: bold;
+    }
+
+    .contact a:hover {
+     text-decoration: underline;
+    }
+
+    .portfolio-item {
+     background-color: white;
+     padding: 18px 18px 22px;
+     border-radius: 14px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     width: 300px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+     .portfolio-item:hover {
+     transform: translateY(-10px);
+     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .portfolio-item p {
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #1f3a5f;
+    }
+
+    .container {
+     max-width: 1200px;
+     margin: 0 auto;
+    }
+
+   .contact p {
+    font-size: 17px;
+    }
+ 
+  .about {
+    background-color: #ffffff;
+    }
+
+  .about p {
+    max-width: 700px;
+    margin: 0 auto 12px;
+    }
+
+  .service {
+  background-color: #f9f9f9;
+   }
+
+  .service-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+   }
+
+   .service-item {
+    width: 300px;
+    background-color: white;
+    padding: 24px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+ 
+   .service-item:hover {
+     transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+     } 
+
+   .service-item h3 {
+     margin-bottom: 12px;
+     color: #1f3a5f;
+     font-size: 20px;
+   }
+
+   .service-item p {
+    font-size: 16px;
+    margin-bottom: 0;
+   }
+
+    .portfolio-desc {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 15px;
+       color: #666;
+    }
+   
+     .portfolio-item span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #666;
+      margin-top: 0;
+      min-height: 42px;
+    }
+
+ 
+   
+    .main-sub {
+     font-size: 24px;
+     font-weight: 600;
+     margin-top: 10px;
+     margin-bottom: 12px;
+    }
+
+   .main-desc {
+     font-size: 17px;
+     margin-top: 0;
+     opacity: 0.95;
+     line-height: 1.8;
+     color: rgba(255, 255, 255, 0.88);
+    }
+   
+   .stats {
+    background-color: #ffffff;
+    padding: 40px 20px;
+   }
+
+   .stats-container {
+    display: flex;  
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+   }
+
+   .stat-item h3 {
+    font-size: 40px;
+    color: #1f3a5f;
+    margin-bottom: 8px;
+    font-weight: bold;
+   }
+
+   .stat-item p {
+    font-size: 15px;
+    color: #666;
+   }
+
+  
+
+   .contact-desc {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #444;
+   }
+
+   .contact .button {
+     margin-top: 20px;
+     background-color: #1f3a5f;
+     color: white;
+     padding: 14px 28px; 
+     font-size: 16px;
+   }
+
+     .contact .button:hover {
+      background-color: #162c47;
+   }     
+
+     .contact .button {
+      border-radius: 30px;
+   }
+
+   .portfolio-item img {
+     width: 100%;
+     height: 380px;
+     object-fit: cover;
+     transition: transform 0.4s ease;
+   }
+ 
+
+   .contact-info {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 8px;
+    }
+    
+    .hero-buttons {
+     margin-top: 20px;
+     display: flex;
+      justify-content: center;
+     gap: 14px;
+     flex-wrap: wrap;
+     }
+
+    .button-outline {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.7);
+    }
+
+  
+   .button-outline:hover {
+    background-color: rgba(255,255,255,0.12);
+    color: white;
+   }
+
+   .main h1 {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+   }
+
+   .main-sub {
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+   }
+
+  
+    
+  
+   .portfolio-item:hover img {
+     transform: scale(1.05);
+   }
+ 
+   .contact-box {
+     margin-top: 20px;
+     padding: 30px;
+     background: #f8f9fb;
+     border-radius: 12px;
+     text-align: center;
+   }
+
+    .contact-phone {
+     font-size: 22px;
+     font-weight: bold;
+     margin-bottom: 10px;
+   }
+
+     .contact-email {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 20px;
+   }
+
+    #contact .button {
+      font-size: 16px;
+      padding: 12px 24px;
+   }
+
+     .portfolio-item {
+      border: 1px solid #eee;
+   }
+
+      .portfolio-item p {
+     font-size: 16px;
+   }
+
+     .portfolio-item span {
+     font-size: 14px;
+     color: #777;
+   }  
+
+   
+    .portfolio-item {
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+    }
+  
+     .portfolio-item img {
+     width: 100%;
+     height: 260px;
+     object-fit: contain;
+     background: #f9f9f9;
+     padding: 10px;
+     box-sizing: border-box;
+     }
+
+    
+     .why-section {
+      background-color: #f9fafb;
+      color: #1f3a5f;
+       padding: 60px 20px;
+    }
+
+      .why-section h2 {
+       color: #1f3a5f;
+      margin-bottom: 16px;
+    }
+
+     .why-desc {
+      max-width: 720px;
+      margin: 0 auto 40px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #666;
+    }
+
+    
+     .why-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+     }
+
+     .why-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid #e9e9e9;
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+     }
+    
+      .why-card {
+       transition: all 0.25s ease;
+     }
+
+      .why-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+     }
+    
+    
+
+     .why-text {
+     text-align: left;
+     }
+
+     .why-text h3 {
+       margin: 0 0 10px;
+       font-size: 20px;
+       color: #1f3a5f;
+     }
+
+     .why-text p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #666;
+     }
+     
+     .button {
+     display: inline-block;
+      margin-top: 10px;
+      padding: 12px 20px;
+      background: #1f3a5f;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+     }
+
+      .button:hover {
+       background: #162c48;
+     }
+
+     .button.secondary {
+      background: #ffcc00;
+      color: #000;
+      font-weight: 600;
+      }
+
+
+     .button.secondary:hover {
+      background: #555;
+     }
+
+     .contact-box {
+      text-align: center;
+     }
+
+     .button {
+      margin: 8px;
+     }
+
+     .process {
+      background: #ffffff;
+     }
+
+     .process-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+     flex-wrap: wrap;
+    }
+
+     .process-item {
+      width: 280px;
+      background: #f9fafb;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      transition: 0.25s;
+    }
+
+     .process-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+      .process-item h3 {
+       color: #1f3a5f;
+       margin-bottom: 10px;
+    }
+
+      .process-item p {
+       font-size: 15px;
+       color: #666;
+    }
+
+     .contact-form {
+       max-width: 800px;
+       margin: 30px auto 0;
+       padding: 28px;
+       background: #ffffff;
+       border: 1px solid #ececec;
+       border-radius: 16px;
+       box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+       text-align: left;
+     }
+
+       .form-row {
+       display: flex;
+        gap: 18px;
+       flex-wrap: wrap;
+       margin-bottom: 18px;
+      }
+
+     .form-group {
+     flex: 1;
+     min-width: 260px;
+     }
+
+    .form-group label {
+     display: block;
+     margin-bottom: 8px;
+     font-size: 14px;
+     font-weight: 600;
+     color: #1f3a5f;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+     width: 100%;
+     padding: 14px 14px;
+     border: 1px solid #dcdcdc;
+     border-radius: 10px;
+     font-size: 14px;
+     box-sizing: border-box;
+     background: #fff;
+     }
+
+     .form-group input:focus,
+     .form-group select:focus,
+     .form-group textarea:focus {
+      outline: none;
+      border-color: #1f3a5f;
+      box-shadow: 0 0 0 3px rgba(31,58,95,0.08);
+     }
+
+     .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: #1f3a5f;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+    }
+
+    .form-submit:hover {
+     background: #162c48;
+     }
+
+
+
+
+     
+     .contact-form {
+      margin-top: 30px;
+    }    
+
+     .form-group {
+       margin-bottom: 16px; 
+     } 
+    
+    .form-note {
+     font-size: 13px;
+     color: #777;
+    margin: 15px 0 10px;   
+    text-align: center;   
+    }
+
+    .kakao-btn {
+     display: inline-block;
+     padding: 10px 16px;
+     background: #fee500;
+     color: #000;
+     border-radius: 20px;
+     font-weight: 600;
+     margin-left: 10px;
+     }
+
+
+ </style>
+ </head>
+ <body>
+    <div class="menu">
+    <a href="#about">About</a>
+    <a href="#service">Service</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+  
+  <section class="main">
+    <div class="container"> 
+    <h1>기업 근무복 전문 기획</h1>
+    <p class="main-sub">
+           현장에 맞는 디자인과 기능을 제안합니다    
+    </p>
+
+    <p class="main-desc">
+            디자인 제안부터 생산·납품까지
+            금해 플래닝이 함께합니다
+    </p>
+     <div class="hero-buttons">
+     <a href="#contact" class="button">견적 문의하기</a>
+     <a href="#portfolio" class="button button-outline">포트폴리오 보기</a>
+</div>
+
+  </div>
+  </section>
+  
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>금해 플래닝은 기업 근무복과 유니폼에 실용성과 브랜드 가치를 더하는 기획을 제안합니다. </p>
+      <p>상담부터 디자인 제안, 샘플 진행, 생산, 납품까지 전 과정을 함께합니다.</p>
+    </div>
+  </section>
+     <section class="stats">
+     <div class="container">
+     <div class="stats-container">
+
+      <div class="stat-item">
+        <h3>10+</h3>
+        <p>프로젝트 경험</p>
+      </div>
+
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>제작 사례</p>
+      </div>
+
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>맞춤 설계</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   <section id="service" class="service">
+  <div class="container">
+    <h2>Service</h2>
+
+    <div class="service-container">
+
+      <div class="service-item">
+        <h3>근무복 기획</h3>
+        <p>현장환경과 근로자의 업무특성을 고려하여 기획컨셉을 설계합니다.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>디자인 제안</h3>
+        <p>기업의 가치와 아이덴티티를 반영합니다.</p>
+      </div>
+
+      <div class="service-item">
+        <h3>생산 및 납품</h3>
+        <p>샘플부터 생산,납품까지 책임감을 갖고 진행합니다.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+    <h2>Portfolio</h2>
+    <p class="portfolio-desc">
+        현장과 용도에 맞춰 설계된 실제 작업 기준 디자인 사례입니다
+     </p>
+    <div class="portfolio-container"> 
+    <div class="portfolio-item">
+    <img src="vest.jpg">
+    <p>work-vest</p>
+    <span>현장 작업에 적합한 메쉬조끼 디자인</span>
+    </div>
+
+    <div class="portfolio-item">
+    <img src="jumper.jpg">
+    <p>winter jacket</p>
+    <span>보온성과 경량성을 기본으로 베이직한 패딩점퍼</span>
+    </div>
+  
+    <div class="portfolio-item">
+    <img src="tshirt.jpg" >
+    <p>t-shirt</p>
+    <span>캐주얼한 스타일로 매장근무에 적합한 티셔츠 </span>
+   </div>
+
+   
+  <div class="portfolio-item">
+    <img src="hoodie.jpg">
+    <p>wokr-hoodie</p>
+    <span>브랜드 포인트가 강조된 작업용 후드 집업</span>
+  </div>
+
+ 
+  <div class="portfolio-item">
+    <img src="vest1.jpg">
+    <p>public-uni vest</p>
+    <span>공공기관 BI에 맞춘 커스터마이징 조끼</span>
+  </div>
+
+  
+  <div class="portfolio-item">
+    <img src="jumper1.jpg">
+    <p>driving padding</p>
+    <span>편안한 착장과 보온성을 겸비한 경량점퍼</span>
+  </div>
+
+  
+  
+   </div>
+   </div>
+  </section>
+
+
+   <section class="why-section">
+  <div class="container">
+    <h2>왜 금해와 함께해야 할까요?</h2>
+    <p class="why-desc">
+      디자인 제안부터 샘플 진행, 생산, 납품까지 실무 중심으로 함께합니다.
+    </p>
+
+    <div class="why-container">
+
+      <div class="why-card">
+        <div class="why-text">
+          <h3>현장 맞춤 설계</h3>
+          <p>
+            작업 환경과 착용 목적을 고려해 실용성과 활동성을 함께 설계합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-text">
+          <h3>디자인 + 생산 연계</h3>
+          <p>
+            디자인 제안에 그치지 않고 샘플, 생산, 납품까지 연결되는 구조로 진행합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-text">
+          <h3>안정적인 납품 대응</h3>
+          <p>
+            단체복과 기업 근무복 특성에 맞춰 일정과 수량을 고려한 안정적인 납품을 지원합니다.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+    <section class="process">
+  <div class="container">
+    <h2>진행 프로세스</h2>
+
+    <div class="process-container">
+
+      <div class="process-item">
+        <h3>STEP 01 상담</h3>
+        <p>요구사항을 확인하고 방향을 설정합니다</p>
+      </div>
+
+      <div class="process-item">
+        <h3>STEP 02 디자인</h3>
+        <p>현장에 맞는 디자인을 제안합니다</p>
+      </div>
+
+      <div class="process-item">
+        <h3>STEP 03 생산 및 납품</h3>
+        <p>샘플부터 납품까지 책임지고 진행합니다</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <section id="contact" class="contact">
+   <div class="container">
+   <h2>Contact</h2>
+
+    <p class="contact-desc">
+     근무복 상담이 필요하시면 언제든지 연락주세요
+   </p>
+    
+   <div class="contact-box">
+      <p class="contact-phone">📞 010-7466-3617</p>
+      <p class="contact-email">✉ asw5060@naver.com</p>
+     
+      <a href="tel:01074663617" class="button">
+      전화 상담 바로하기
+     </a>
+      <a href="sms:01074663617?body=근무복 상담 문의드립니다." class="button secondary">
+        문자 상담하기
+      </a>
+      <a href="http://pf.kakao.com/_qJxeCs/chat" target="_blank" class="kakao-btn">
+         카카오 상담하기
+      </a>
+      
+
+
+  </div>
+
+     <form class="contact-form">
+    <div class="form-row">
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" placeholder="성함을 입력하세요">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">연락처</label>
+      <input type="tel" id="phone" placeholder="010-0000-0000">
+    </div>
+   </div>
+
+    <div class="form-row">
+      <div class="form-group">
+      <label for="email">이메일</label>
+       <input type="email" id="email" placeholder="example@company.com">
+    </div>
+  </div>
+     <div class="form-group">
+      <label for="message">상세 문의</label>
+     <textarea id="message" rows="5" placeholder="원하시는 디자인, 수량, 일정 등을 자유롭게 작성해주세요"></textarea>
+   </div>
+    <p class="form-note">※ 문의 남겨주시면 빠르게 연락드립니다</p>
+    <button type="submit" class="form-submit">문의 접수하기</button>
+
+   </form>
+
+ </section>
+
+
+</body>
+</html>
