@@ -873,9 +873,9 @@
 
   </div>
      
-     <form class="contact-form" action="https://formspree.io/f/xeevoddk" method="POST">
+     <form id="contactForm" class="contact-form" action="https://formspree.io/f/xeevoddk" method="POST">
      <input type="hidden" name="_subject" value="금해플래닝 상담 문의 접수">  
-     <input type="hidden" name="_next" value="https://asw5060-dotcom.github.io/geumhae-site/thanks.html">
+    
      <div class="form-row">
     <div class="form-group">
       <label for="name">이름</label>
@@ -904,6 +904,36 @@
     <button type="submit" class="form-submit">문의 접수하기</button>
 
    </form>
+    
+   <script>
+    const contactForm = document.getElementById("contactForm");
+ 
+    contactForm.addEventListener("submit", async function(e) {
+    e.preventDefault( );
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        window.location.href = "thanks.html";
+      } else {
+        alert("문의 접수 중 문제가 발생했습니다. 다시 시도해주세요.");
+      }
+    } catch (error) {
+      alert("문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+     }
+    });
+
+  </script> 
+
 
  </section> 
 
